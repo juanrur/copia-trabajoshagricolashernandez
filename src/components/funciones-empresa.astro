@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string
+  paragraph: string
+  video: string
+}
+
+const {title, video, paragraph} = Astro.props
+---
+<article class="grid grid-cols-2 gap-10 place-content-center">
+  <div class="text-left">
+    <h1 class="text-[2.5rem] font-bold">{title}</h1>
+    <astro-greet data-paragraph={paragraph}>
+      <p class="mt-5 text-lg"></p>
+    </astro-greet>
+  </div>
+
+  <iframe 
+  class="place-self-center"
+  width="460" 
+  height="255" 
+  src={video}
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen
+  ></iframe>
+
+</article>
+
+<script>
+  class AstroGreet extends HTMLElement {
+    constructor() {
+      super();
+
+      // Lee el mensaje del atributo data.
+      const paragraph = this.dataset.paragraph;
+      const p = this.querySelector('p');
+      p.innerHTML = paragraph
+    }
+  }
+
+  customElements.define('astro-greet', AstroGreet);
+</script>

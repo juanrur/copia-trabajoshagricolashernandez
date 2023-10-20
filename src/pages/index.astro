@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro'
+import Article from '../components/funciones-empresa.astro';
+import {articles} from '../info/funciones-empresa'
+const widthLogo = 40
+---
+
+<Layout title="Trabajos Agrícolas Hernández | Especialistas en nivelación">
+	<main class="text-center">
+		<section class="text-white h-screen">
+			<Header />
+			<video 
+			class="z-[-1] absolute w-full h-full top-0 left-0 object-cover"
+			autoplay muted loop 
+			src="https://trabajosagricolashernandez.com/wp-content/uploads/2021/06/video-cabecera-1.mp4" />
+			<div class="mt-20">
+				<h1 class="text-5xl font-bold">Trabajos Agrícolas Hernández</h1>
+				<h2 class="text-xl font-semibold mt-2">Especialistas en servicios de nivelación, preparación de terrenos y construcción de balsas.</h2>
+			</div>
+		</section>
+		<section class="grid max-w-6xl gap-16 text-white mx-auto mt-10">
+			{articles.map(({title, paragraph, video}) => (
+				<Article title={title} paragraph={paragraph} video={video}></Article>
+			))}
+		</section>
+	</main>
+</Layout>
