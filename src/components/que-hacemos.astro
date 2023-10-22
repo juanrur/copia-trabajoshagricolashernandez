@@ -1,0 +1,10 @@
+---
+import Article from '../components/funciones-empresa.astro'
+import {articles} from '../info/funciones-empresa'
+---
+<section class="grid max-w-6xl gap-16 mx-auto mt-10">
+  <h1 class="text-7xl font-bold">QUE HACEMOS?</h1> 
+  {articles.map(({title, paragraph, video}) => (
+    <Article title={title} paragraph={paragraph} video={video}></Article>
+  ))}
+</section>
