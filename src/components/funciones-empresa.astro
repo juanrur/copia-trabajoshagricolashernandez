@@ -6,10 +6,11 @@ interface Props {
 }
 
 const {title, video, paragraph} = Astro.props
+
 ---
 <article class="grid grid-cols-2 gap-10 place-content-center">
   <div class="text-left">
-    <h1 class="text-[2.5rem] font-bold">{title}</h1>
+    <h2 class="text-[2.5rem] font-bold">{title}</h2>
     <astro-greet data-paragraph={paragraph}>
       <p class="mt-5 text-lg"></p>
     </astro-greet>
