@@ -1,32 +1,72 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Header from '../components/header.astro'
-import QueHacemos from '../components/que-hacemos.astro'
-import {empresasTrabajos} from '../info/empresas-trabajos'
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import QueHacemos from "../components/que-hacemos.astro";
+import { empresasTrabajos } from "../info/empresas-trabajos";
+import QueNosDefine from "@components/que-nos-define.astro";
+import TractorImg from "@public/tractores/tractor-1.jpg"
 ---
 
 <Layout title="Trabajos Agrícolas Hernández | Especialistas en nivelación">
-	<main class="text-center">
-		<section class="h-screen">
-			<Header />
-			<video 
-			class="z-[-1] absolute w-full h-full top-0 left-0 object-cover"
-			autoplay muted loop 
-			src="https://trabajosagricolashernandez.com/wp-content/uploads/2021/06/video-cabecera-1.mp4" />
-			<div class="mt-20 text-white">
-				<h1 class="text-5xl font-bold">Trabajos Agrícolas Hernández</h1>
-				<h2 class="text-xl font-semibold mt-2">Especialistas en servicios de nivelación, preparación de terrenos y construcción de balsas.</h2>
-			</div>
-		</section>
-		<section class="flex gap-5 justify-around mx-auto max-w-6xl mt-10">
-			{empresasTrabajos.map(({img, name, province, time}) => (
-				<div class="max-w-xs">
-					<img class="w-[300px] mx-auto" src={img.src} alt={`logo de empresa ${name}`}>
-					<h1 class="text-3xl">{province}</h1>
-					<h2 class="text-lg text-opacity-75">Trabajando juntos desde hace más de {time}</h2>
-				</div>
-			))}
-		</section>
-		<QueHacemos />
-	</main>
+  <section class="h-screen">
+    <Header />
+    <video
+      class="z-[-1] absolute w-full h-full top-0 left-0 object-cover"
+      autoplay
+      muted
+      loop
+      src="https://trabajosagricolashernandez.com/wp-content/uploads/2021/06/video-cabecera-1.mp4"
+    ></video>
+    <div class="mt-20 text-white">
+      <h1 class="text-5xl font-bold">Trabajos Agrícolas Hernández</h1>
+      <h2 class="text-xl font-semibold mt-2">
+        Especialistas en servicios de nivelación, preparación de terrenos y
+        construcción de balsas.
+      </h2>
+    </div>
+  </section>
+
+  <section class="my-20 grid gap-20">
+    <h1>Empresas con las que hemos Trabajando</h1>
+    <ul class="flex justify-center gap-20">
+      {
+        empresasTrabajos.map(({ img, name, province, time }) => (
+          <li class="max-w-xs">
+            <img
+              class="w-[300px] mx-auto"
+              src={img.src}
+              alt={`logo de empresa ${name}`}
+            />
+            <h1 class="text-3xl">{province}</h1>
+            <h2 class="text-lg text-opacity-75">
+              Trabajando juntos desde hace más de {time}
+            </h2>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <QueHacemos />
+
+  <QueNosDefine />
+
+  <section class="grid grid-cols-2 gap-20 mt-40">
+		<div class="grid gap-10">
+			<h1 class="text-left">Una historia marcada por la innovación</h1>
+			<p>
+				Somos una empresa dedicada a la nivelación y preparación de terrenos con
+				una experiencia de 25 años de trabajos y ejercicio en el sector. Nuestro
+				ámbito de trabajo se desarrolla en base a trabajos agrícolas y a
+				importantes proyectos de obra civil y construcción de balsas que se han
+				desarrollado y culminado con gran éxito, lo que nos avala como una de las
+				mejores y más competitivas empresas del sector.
+			</p>
+		</div>
+		<img 
+			class='rounded' 
+			src={TractorImg.src} 
+			alt="Tractor"
+		>
+  </section>
 </Layout>

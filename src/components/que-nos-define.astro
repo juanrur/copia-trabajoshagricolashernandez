@@ -1,0 +1,47 @@
+---
+import EquipoImg from "@public/equipo.jpg"
+---
+
+<section class="grid grid-cols-2 mt-40">
+  <img 
+  class="rounded" 
+  width="500"
+  src={EquipoImg.src} 
+  alt="Trabajadores de la empresa"
+  >
+  <ul class="">
+    <h1 class="whitespace-nowrap">¿Qué nos define?</h1>
+
+    <li>
+      <h2>25 AÑOS DE EXPERIENCIA</h2>
+      <p>
+        Preparando terrenos para cultivos, construcción de balsas y obra civil
+      </p>
+    </li>
+
+    <li>
+      <h2>EQUIPAMIENTO ESPECIALIZADO</h2>
+      <p>
+        Contamos con lo último en equipamiento para que el acabado del trabajo
+        sea impecable
+      </p>
+    </li>
+
+    <li>
+      <h2>MAQUINARIA PROPIA</h2>
+      <p>
+        Disponemos de la maquinaria más innovadora con la tecnología más
+        avanzada
+      </p>
+    </li>
+  </ul>
+</section>
+
+<style>
+  ul {
+    @apply grid
+  }
+  h2 {
+    @apply text-left
+  }
+</style>
