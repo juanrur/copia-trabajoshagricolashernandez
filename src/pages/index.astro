@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
 import QueHacemos from "../components/que-hacemos.astro";
-import { empresasTrabajos } from "../info/empresas-trabajos";
 import QueNosDefine from "@components/que-nos-define.astro";
 import TractorImg from "@public/tractores/tractor-1.jpg"
+import TrabajosAnteriores from "@components/trabajos-anteriores.astro";
 ---
 
 <Layout title="Trabajos Agrícolas Hernández | Especialistas en nivelación">
@@ -26,26 +26,7 @@ import TractorImg from "@public/tractores/tractor-1.jpg"
     </div>
   </section>
 
-  <section class="my-20 grid gap-20">
-    <h1>Empresas con las que hemos Trabajando</h1>
-    <ul class="flex justify-center gap-20">
-      {
-        empresasTrabajos.map(({ img, name, province, time }) => (
-          <li class="max-w-xs">
-            <img
-              class="w-[300px] mx-auto"
-              src={img.src}
-              alt={`logo de empresa ${name}`}
-            />
-            <h1 class="text-3xl">{province}</h1>
-            <h2 class="text-lg text-opacity-75">
-              Trabajando juntos desde hace más de {time}
-            </h2>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+  <TrabajosAnteriores />
 
   <QueHacemos />
 

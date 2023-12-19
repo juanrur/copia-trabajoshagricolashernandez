@@ -1,0 +1,52 @@
+---
+import Borja from '../../public/empresas/Borja.png'
+import Hisparroz from '../../public/empresas/Grupo-Cartuja.png'
+import GrupoCartuja from '../../public/empresas/Hisparroz.png'
+---
+<section class="my-20 grid gap-20">
+  <h1>Empresas con las que hemos Trabajando</h1>
+  <ul class="flex justify-center gap-20">
+    <li>
+      <img
+        src={Hisparroz.src}
+        alt="logo de la empresa Hisparroz" 
+      />
+      <h2>HISPARROZ</h2>
+      <h3>Trabajando juntos desde hace más de 25 años</h3>
+    </li>
+    <li>
+      <img
+        src={Borja.src}
+        alt="logo de la empresa Borja" 
+      />
+      <h2>BORJA</h2>
+      <h3>Trabajando juntos desde hace más de 10 años</h3>
+    </li>
+    <li>
+      <img
+        src={GrupoCartuja.src}
+        alt="logo de  empresa grupo cartuja" 
+      />
+      <h2>GRUPO CARTUJA</h2>
+      <h3>Trabajando juntos desde hace más de 10 años</h3>
+    </li>
+  </ul>
+</section>
+
+<style>
+  img {
+    @apply w-[300px] mx-auto
+  }
+
+  li {
+    @apply max-w-xs
+  }
+
+  h2 {
+    @apply text-3xl
+  }
+
+  h3 {
+    @apply text-lg text-opacity-75
+  }
+</style>
