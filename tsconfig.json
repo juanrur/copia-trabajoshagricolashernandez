@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@public/*" : ["public/*"],
-      "@components/*" : ["src/components/*"]
+      "@components/*" : ["src/components/*"],
+      "@layout": ["src/layouts/Layout.astro"]
     }
   }
 }
