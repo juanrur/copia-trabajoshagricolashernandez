@@ -1,11 +1,31 @@
 ---
-import Borja from "../../public/empresas/Borja.png";
-import Hisparroz from "../../public/empresas/Grupo-Cartuja.png";
-import GrupoCartuja from "../../public/empresas/Hisparroz.png";
+import Borja from "@public/empresas/Borja.png";
+import Hisparroz from "@public/empresas/Grupo-Cartuja.png";
+import GrupoCartuja from "@public/empresas/Hisparroz.png";
+
+export const empresasTrabajos = [
+  {
+    name: "HISPARROZ",
+    province: "Sevilla",
+    time: "25 años",
+    img: Hisparroz,
+  },
+  {
+    name: "BORJA",
+    province: "Huelva",
+    time: "10 años",
+    img: Borja,
+  },
+  {
+    name: "GRUPO CARTUJA",
+    province: "Huelva",
+    time: "10 años",
+    img: GrupoCartuja,
+  },
+]
 ---
 
 <section class="w-full py-12 md:py-24 lg:py-32 bg-gray-100 text-center">
-
   <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
     Empresas con las que hemos Trabajando
   </h2>
@@ -13,57 +33,16 @@ import GrupoCartuja from "../../public/empresas/Hisparroz.png";
   <ul
     class="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12"
   >
-    <li>
-      <img src={Hisparroz.src} alt="logo de la empresa Hisparroz" />
-      <h3>HISPARROZ</h3>
-      <p>Trabajando juntos desde hace más de 25 años</p>
-    </li>
-
-    <li>
-      <h3>Service 2</h3>
-
-      <p>Description of Service 2</p>
-    </li>
-    
-    <li>
-      <h3>Service 1</h3>
-
-      <p>Description of Service 1</p>
-    </li>
-
-  </ul>
-</section>
-
-<style>
-  li {
-    @apply rounded-lg border shadow-sm bg-white
-  }
-
-  h3 {
-    @apply p-6 text-xl font-bold
-  }
-
-  p {
-    @apply p-6 text-gray-500
-  }
-</style>
-
-<section class="my-20 grid gap-20">
-  <ul class="flex justify-center gap-20">
-    <li>
-      <img src={Hisparroz.src} alt="logo de la empresa Hisparroz" />
-      <h2>HISPARROZ</h2>
-      <h3>Trabajando juntos desde hace más de 25 años</h3>
-    </li>
-    <li>
-      <img src={Borja.src} alt="logo de la empresa Borja" />
-      <h2>BORJA</h2>
-      <h3>Trabajando juntos desde hace más de 10 años</h3>
-    </li>
-    <li>
-      <img src={GrupoCartuja.src} alt="logo de  empresa grupo cartuja" />
-      <h2>GRUPO CARTUJA</h2>
-      <h3>Trabajando juntos desde hace más de 10 años</h3>
-    </li>
+    {
+      empresasTrabajos.map(({ name, province, time, img }) => (
+        <li class="rounded-lg border shadow-sm bg-white">
+          <img src={img.src} alt="logo de empresa" />
+          <h3 class="text-xl font-bold">{name}</h3>
+          <p class="p-4 text-gray-500">
+            Trabajando justos desde hace más de {time}
+          </p>
+        </li>
+      ))
+    }
   </ul>
 </section>
