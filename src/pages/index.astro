@@ -1,53 +1,129 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/header.astro";
-import QueHacemos from "../components/que-hacemos.astro";
-import QueNosDefine from "@components/que-nos-define.astro";
-import TractorImg from "@public/tractores/tractor-1.jpg"
-import TrabajosAnteriores from "@components/trabajos-anteriores.astro";
+import QueHacemos from "@components/que-hacemos.astro";
+import TrabajosAnteriores from "@components/trabajos-anteriores.astro"
+import Layout from "@layout"
 ---
-
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/SVfA4nWgMde
+-->
 <Layout title="Trabajos Agrícolas Hernández | Especialistas en nivelación">
-  <section class="h-screen">
-    <Header />
-    <video
-      class="z-[-1] absolute w-full h-full top-0 left-0 object-cover"
-      autoplay
-      muted
-      loop
-      src="https://trabajosagricolashernandez.com/wp-content/uploads/2021/06/video-cabecera-1.mp4"
-    ></video>
-    <div class="mt-20 text-white">
-      <h1 class="text-5xl font-bold">Trabajos Agrícolas Hernández</h1>
-      <h2 class="text-xl font-semibold mt-2">
-        Especialistas en servicios de nivelación, preparación de terrenos y
-        construcción de balsas.
-      </h2>
-    </div>
-  </section>
+  <div class="flex flex-col min-h-screen">
+    <header class="px-4 lg:px-6 h-14 flex items-center">
+      <a class="flex items-center justify-center w-24" href="#">
+        <img
+          src="https://trabajosagricolashernandez.com/wp-content/uploads/2023/06/Logo-Trabajos-Agricolas-Hernandez.png" 
+          alt="Logo de Trabajos Agrícolas Hernandez"
+        >
+      </a>
 
-  <TrabajosAnteriores />
+      <nav class="ml-auto flex gap-4 sm:gap-6">
+        <a href="#">INICIO</a>
+        <a href="#">SERVICIOS DE NIVELACIÓN</a>
+        <a href="#">COSTRUCCIÓN DE BALSAS</a>
+        <a href="#">OBRA CIVIL</a>
+      </nav>
+      
+    </header>
+    
+    <main>
+      <section class="w-full pt-20 pb-6 sm:pb-12 md:pb-24 lg:pb-32 xl:pb-48 container px-4 md:px-6 mx-auto grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+        <div class="space-y-2 flex flex-col justify-center mx-auto">
+          <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Trabajos Agrícolas Hernández</h1>
+          <p class="max-w-[600px] text-gray-500 md:text-xl">
+            Especialistas en servicios de nivelación, preparación de terrenos y construcción de balsas
+          </p>
+        </div>
 
-  <QueHacemos />
-
-  <QueNosDefine />
-
-  <section class="grid grid-cols-2 gap-20 mt-40">
-		<div class="grid gap-10">
-			<h1 class="text-left">Una historia marcada por la innovación</h1>
-			<p>
-				Somos una empresa dedicada a la nivelación y preparación de terrenos con
-				una experiencia de 25 años de trabajos y ejercicio en el sector. Nuestro
-				ámbito de trabajo se desarrolla en base a trabajos agrícolas y a
-				importantes proyectos de obra civil y construcción de balsas que se han
-				desarrollado y culminado con gran éxito, lo que nos avala como una de las
-				mejores y más competitivas empresas del sector.
-			</p>
-		</div>
-		<img 
-			class='rounded' 
-			src={TractorImg.src} 
-			alt="Tractor"
-		>
-  </section>
+        <picture class="w-[550px] h-[550px] mx-auto overflow-hidden rounded-xl object-cover aspect-square bg-gray-500">
+          <video
+            class="h-full object-cover"
+            autoplay
+            muted
+            loop
+            src="https://trabajosagricolashernandez.com/wp-content/uploads/2021/06/video-cabecera-1.mp4"
+          />         
+        </picture>
+      </section>
+      
+      <TrabajosAnteriores />
+      
+      <section class="w-full py-20 px-20">
+        <QueHacemos />
+      </section>
+      
+      
+      <footer
+        class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t"
+      >
+        <p class="text-xs text-gray-500">
+          © Company Name. All rights reserved.
+        </p><nav class="sm:ml-auto flex gap-4 sm:gap-6">
+          <a class="text-xs hover:underline underline-offset-4" href="#">
+            Privacy
+          </a><a class="text-xs hover:underline underline-offset-4" href="#">
+            Terms
+          </a>
+        </nav><div class="flex gap-4 sm:gap-6">
+          <a class="text-xs" href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-4 w-4"
+              ><path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              ></path></svg
+            ><span class="sr-only">Facebook</span></a
+          ><a class="text-xs" href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-4 w-4"
+              ><path
+                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+              ></path></svg
+            ><span class="sr-only">Twitter</span></a
+          ><a class="text-xs" href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-4 w-4"
+              ><path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path><rect width="4" height="12" x="2" y="9"></rect><circle
+                cx="4"
+                cy="4"
+                r="2"></circle></svg
+            ><span class="sr-only">LinkedIn</span></a>
+        </div>
+      </footer>
+    </main>
+  </div>
 </Layout>
+
+<style>
+  nav > a {
+    @apply text-sm font-medium hover:underline underline-offset-4
+  }
+</style>

@@ -1,10 +1,87 @@
 ---
-import Article from '../components/funciones-empresa.astro'
-import {articles} from '../info/funciones-empresa'
+import YoutubeIframe from './youtube-iframe.astro'
 ---
-<section class="grid gap-16 mt-10">
+<div class="grid gap-16">
   <h1>QUE HACEMOS?</h1> 
-  {articles.map(({title, paragraph, video}) => (
-    <Article title={title} paragraph={paragraph} video={video}></Article>
-  ))}
-</section>
+
+  <article>
+    <div>
+      <h2>Servicios de nivelación</h2>
+      <p>
+        Ofrecemos un amplio abanico de servicios en esta área, desde la nivelación hasta la plantación de cultivos.
+        <br /> <br />
+        Nuestro equipo de profesionales es especialista y cuenta con la mejor formación a fin de ofrecer un trabajo excepcional.
+        <br /> <br />
+        Estamos comprometidos con la satisfacción de nuestros clientes, para garantizar la calidad de nuestros trabajos.
+      </p>
+    </div>
+
+    <YoutubeIframe src="https://www.youtube.com/embed/aUDoX6kz0Lc?si=XPnOYN6ZMusrmspd"/>
+
+  </article>
+
+  <article>
+    <div>
+      <h2>Transformación de cultivos</h2>
+      <p>
+        Ayudamos a pequeños, medianos y grandes agricultores en la transformación de sus cultivos.
+        <br /> <br />
+        Trabajos Agrícolas Hernández es una empresa de transformación de terrenos con más de 20 años de experiencia en el sector. 
+        <br /> <br />    
+        Ofrecemos un servicio integral y diferenciador que incluye la preparación del terreno, la fertilización, la irrigación, la siembra, el control de plagas y enfermedades, y la recolección.
+       </p>
+    </div>
+
+    <YoutubeIframe src="https://www.youtube.com/embed/44yCiFPnzew?si=wdMOeoXNkhymx0t6"/>
+
+  </article>
+
+  <article>
+    <div>
+      <h2>Construcción de balsas</h2>
+      <p>
+        Somos una empresa dedicada a la construcción de balsas con más de 25 años de experiencia en el sector.
+        <br /> <br />
+        Nuestra dilatada experiencia y formación especializada nos avala como lideres del sector.
+        <br /> <br />
+        Estamos comprometidos con la calidad para asegurar la satisfacción de nuestros clientes.
+        <br /> <br />    
+        Contamos con un equipo de profesionales con gran experiencia para ofrecer resultados óptimos.
+      </p>
+    </div>
+
+    <YoutubeIframe src="https://www.youtube.com/embed/8-ADrqqnpVQ?si=Vm7JCSt-IPhskk6F"/>
+
+  </article>
+  
+  <article>
+    <div>
+      <h2>Obra civil</h2>
+      <p>
+        Preparamos terrenos para la construcción de obras civiles como plantas termosolares, carreteras y vías ferroviarias.
+        <br /> <br />
+        Nuestro equipo de profesionales está altamente cualificados y experimentados. Utilizamos las últimas tecnologías para garantizar la calidad de nuestros trabajos.
+        <br /> <br />
+        Estamos comprometidos con la satisfacción de nuestros clientes y ofrecemos un servicio integral que incluye el diseño, la construcción y el mantenimiento de sus proyectos.
+      </p>
+    </div>
+
+    <YoutubeIframe src="https://www.youtube.com/embed/Iwwuk_NiVFI?si=evhCMfOfOAMNbsFI"/>
+
+  </article>
+
+</div>
+
+<style>
+  article {
+    @apply grid grid-cols-2 gap-10
+  }
+
+  h2 {
+    @apply text-[2.5rem] font-bold
+  }
+
+  p {
+    @apply mt-5
+  }
+</style>
