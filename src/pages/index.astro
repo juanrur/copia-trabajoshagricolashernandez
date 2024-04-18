@@ -4,27 +4,43 @@ import QueHacemos from "../components/que-hacemos.astro";
 import QueNosDefine from "@components/que-nos-define.astro";
 import TractorImg from "@public/tractores/tractor-1.jpg"
 import TrabajosAnteriores from "@components/trabajos-anteriores.astro";
+import ArrowDown from "@icons/arrow-down.astro";
 ---
 
 <Layout title="Trabajos Agrícolas Hernández | Especialistas en nivelación">
-  <main class="[&>*:first-child]:bg-transparent [&>*:nth-child(odd)]:bg-[#070707] [&>*:nth-child(even)]:bg-blue-500">
+  <main class="max-w-5xl mx-auto">
+    <!-- clip path ⬇️ -->
+    <!-- style="clip-path: polygon(100% 0, 100% 85%, 10% 100%, 0 100%, 0 0);" -->
     <section class="h-screen">
+      <div class="bg-gradient-to-b from-transparent to-bgcolor from-75% -z-10 h-full w-auto min-w-full absolute left-0"
+      />
+
       <video
-        class="z-[-1] absolute w-full h-full top-0 left-0 object-cover"
-        autoplay
-        muted
-        loop
-        src="https://trabajosagricolashernandez.com/wp-content/uploads/2021/06/video-cabecera-1.mp4"
-      ></video>
-      <div class="mt-20 text-white">
+      class="-z-20 h-full w-auto min-w-full absolute top-0 left-0 object-cover"
+      autoplay
+      muted
+      loop
+      src="https://trabajosagricolashernandez.com/wp-content/uploads/2021/06/video-cabecera-1.mp4"
+      />
+
+      <div class="pt-60 text-white">
         <h1 class="text-5xl font-bold">Trabajos Agrícolas Hernández</h1>
         <h2 class="text-xl font-semibold mt-2">
           Especialistas en servicios de nivelación, preparación de terrenos y
           construcción de balsas.
         </h2>
-      </div>
-    </section>
+      </div>  
 
+      <a 
+        class="grid place-content-center h-16 w-16 absolute bg-[#ffca37] top-[calc(100vh-140px)] left-2/4 -translate-x-2/4 rounded-full"
+        href="#trabajos-anteriores"
+      >
+      <ArrowDown class="size-10 text-black" />
+      </a>
+
+    </section>
+    
+    
     <TrabajosAnteriores />
 
     <QueHacemos />

@@ -5,7 +5,8 @@
     "paths": {
       "@public/*" : ["public/*"],
       "@components/*" : ["src/components/*"],
-      "@layout": ["src/layouts/Layout.astro"]
+      "@layout": ["src/layouts/Layout.astro"],
+      "@icons/*": ["src/icons/*"]
     }
   }
 }

@@ -1,10 +1,66 @@
 ---
-import Article from '../components/funciones-empresa.astro'
-import {articles} from '../info/funciones-empresa'
+const articles = [
+  {
+    title: "Servicios de nivelación",
+    paragraphs: [
+      "Ofrecemos un amplio abanico de servicios en esta área, desde la nivelación hasta la plantación de cultivos.", 
+      "Nuestro equipo de profesionales es especialista y cuenta con la mejor formación a fin de ofrecer un trabajo excepcional.",
+      "Estamos comprometidos con la satisfacción de nuestros clientes, para garantizar la calidad de nuestros trabajos."
+    ],
+    video: "https://www.youtube.com/embed/aUDoX6kz0Lc?si=XPnOYN6ZMusrmspd"
+  },
+  {
+    title: "Transformación de cultivos",
+    paragraphs: [
+      "Ayudamos a pequeños, medianos y grandes agricultores en la transformación de sus cultivos.",
+      "Trabajos Agrícolas Hernández es una empresa de transformación de terrenos con más de 20 años de experiencia en el sector.",
+      "Ofrecemos un servicio integral y diferenciador que incluye la preparación del terreno, la fertilización, la irrigación, la siembra, el control de plagas y enfermedades, y la recolección."
+    ], 
+    video: 'https://www.youtube.com/embed/44yCiFPnzew?si=wdMOeoXNkhymx0t6'
+  },
+  {
+    title: "Construcción de balsas",
+    paragraphs: ["Somos una empresa dedicada a la construcción de balsas con más de 25 años de experiencia en el sector.",
+    "Nuestra dilatada experiencia y formación especializada nos avala como lideres del sector.",
+    "Estamos comprometidos con la calidad para asegurar la satisfacción de nuestros clientes.",
+    "Contamos con un equipo de profesionales con gran experiencia para ofrecer resultados óptimos."
+  ],
+    video: 'https://www.youtube.com/embed/8-ADrqqnpVQ?si=Vm7JCSt-IPhskk6F'
+  },
+  {
+    title: "Obra civil",
+    paragraphs: [
+      "Preparamos terrenos para la construcción de obras civiles como plantas termosolares, carreteras y vías ferroviarias.",
+      "Nuestro equipo de profesionales está altamente cualificados y experimentados. Utilizamos las últimas tecnologías para garantizar la calidad de nuestros trabajos.",
+      "Estamos comprometidos con la satisfacción de nuestros clientes y ofrecemos un servicio integral que incluye el diseño, la construcción y el mantenimiento de sus proyectos."
+    ],
+    video: 'https://www.youtube.com/embed/Iwwuk_NiVFI?si=evhCMfOfOAMNbsFI'
+  }
+
+]
 ---
-<section class="grid gap-16 mt-10">
-  <h1>QUE HACEMOS?</h1> 
-  {articles.map(({title, paragraph, video}) => (
-    <Article title={title} paragraph={paragraph} video={video}></Article>
+<section class="grid gap-10 mt-10">
+  <h1>¿QUÉ HACEMOS?</h1> 
+  {articles.map(({title, paragraphs, video}) => (
+    <article class="grid grid-cols-2">
+      <div>
+        <h2 class="text-[2.5rem] text-left text-orange-400 font-bold">{title}</h2>
+        <span class="flex flex-col space-y-4">
+          {paragraphs.map((text) => (
+            <p class="text-xl max-w-[45ch]">{text}</p>
+          ))}
+        </span>
+      </div>
+
+      <iframe 
+      class="place-self-center"
+      width="460" 
+      height="255" 
+      src={video}
+      title="YouTube video player" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen
+      ></iframe>
+    </article>
   ))}
 </section>

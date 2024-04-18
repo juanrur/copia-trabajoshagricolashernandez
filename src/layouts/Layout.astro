@@ -27,23 +27,31 @@ const { title } = Astro.props;
 <style is:global>
 	html {
 		font-family: system-ui, sans-serif;
-		background: #628395;
+		background: #f1f1f1;
 		background-size: 224px;
 		color: #000;
 		text-align: center;
 		padding-bottom: 20rem;
+		scroll-behavior: smooth;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+
 	* {
 		box-sizing: border-box;
 		margin: 0;
 	}
+
 	h1 {
-		@apply text-7xl font-bold
+		@apply text-7xl font-bold 
 	}
-	section {
-		@apply max-w-6xl mx-auto
-	}
+
 	p {
 		@apply text-left text-lg
 	}
+
 </style>
